@@ -8,9 +8,6 @@
 # include <errno.h>
 # include <string.h>
 
-# define SYS_READ_MAC 0x2000003
-# define SYS_WRITE_MAC 0x2000004
-
 size_t		ft_strlen(const char *str);
 char		*ft_strcpy(char *dest, char const *src);
 int			ft_strcmp(char const *dst, char const *src);
