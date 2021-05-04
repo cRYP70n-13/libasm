@@ -12,14 +12,11 @@ all: $(NAME)
 
 $(NAME): $(SRCS) $(OBJS)
 	@ar rc $(NAME) $(OBJS)
-	@echo "$(GREEN)./$(NAME) made\n---------------$(NC)"
 
 clean:
 	@rm -f $(OBJS)
-	@echo "$(ORANGE)*.o deleted\n-----------$(NC)"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "$(RED)./$(NAME) deleted\n------------------$(NC)"
 
 re: fclean all
