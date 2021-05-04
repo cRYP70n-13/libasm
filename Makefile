@@ -1,7 +1,7 @@
 NAME = libasm.a
 FLAGS = -f macho64
 
-SRCS = ./srcs/ft_strlen.s ./srcs/ft_strcpy.s \
+SRCS = ./srcs/ft_strlen.s ./srcs/ft_strcpy.s ./srcs/ft_strcmp.s \
 		./srcs/ft_write.s ./srcs/ft_read.s ./srcs/ft_strdup.s
 OBJS = $(SRCS:.s=.o)
 

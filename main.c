@@ -21,6 +21,8 @@ int main(void) {
 	printf("%d\n", ret);
 	printf("   strdup: %s\n", strdup("1337 Future is loading"));
 	printf("ft_strdup: %s\n\n", ft_strdup("1337 Future is loading"));
+	printf("Test STRCMP %d\n", ft_strcmp("z", "a"));
+	printf("Test STRCMP %d\n", strcmp("z", "a"));
 
 	return 0;
 }
