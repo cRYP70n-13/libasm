@@ -1,5 +1,5 @@
-#ifndef LIBASM_H
-# define LIBASM_H
+#ifndef __LIBASM_H__
+# define __LIBASM_H__
 
 # include <stdio.h>
 # include <fcntl.h>
@@ -8,11 +8,11 @@
 # include <errno.h>
 # include <string.h>
 
-size_t		ft_strlen(const char *str);
-char		*ft_strcpy(char *dest, char const *src);
 int			ft_strcmp(char const *dst, char const *src);
+size_t		ft_strlen(const char *str);
 ssize_t		ft_write(int fildes, const void *buf, size_t nbyte);
 ssize_t		ft_read(int fildes, void *buf, size_t nbyte);
 char 		*ft_strdup(const char *s1);
+char		*ft_strcpy(char *dest, char const *src);
 
 # endif

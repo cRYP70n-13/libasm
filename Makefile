@@ -1,29 +1,25 @@
 NAME = libasm.a
+FLAGS = -f macho64
 
-SRCS = ft_strlen.s ft_strcpy.s ft_strcmp.s ft_write.s ft_strdup.s ft_read.s
-
+SRCS = ./srcs/ft_strlen.s ./srcs/ft_strcpy.s ./srcs/ft_strcmp.s \
+		./srcs/ft_write.s ./srcs/ft_read.s ./srcs/ft_strdup.s
 OBJS = $(SRCS:.s=.o)
 
-%.s		:%.s
-	nasm -f macho $< -o $@
-
-$(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+%.o: %.s
+	@nasm $(FLAGS) -o $@ $<
 
 all: $(NAME)
 
-clean:
-	rm -f $(OBJS)
+$(NAME): $(SRCS) $(OBJS)
+	@ar rc $(NAME) $(OBJS)
+	@echo "$(GREEN)./$(NAME) made\n---------------$(NC)"
 
-try: all
-	@touch test
-	@echo "This is a test" > test
-	gcc -g -I./libasm.h libasm.a main.c -o try_libasm
-	./try_libasm
+clean:
+	@rm -f $(OBJS)
+	@echo "$(ORANGE)*.o deleted\n-----------$(NC)"
 
 fclean: clean
-	rm -f $(NAME)
-	rm -f try_libasm
-	rm -f test
+	@rm -f $(NAME)
+	@echo "$(RED)./$(NAME) deleted\n------------------$(NC)"
 
 re: fclean all
