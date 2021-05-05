@@ -18,6 +18,5 @@ clean:
 
 fclean: clean
 	@rm -f $(NAME)
-	@rm a.out
 
-re: fclean alk
+re: fclean all
